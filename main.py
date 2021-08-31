@@ -35,7 +35,7 @@ while True:
 	print(f'              {C}{R}BY LIPEZIN {C}')
 	print(f'   //--==--==--==--==--==--==--==--==--==--==--\\')
 	print(f'   11                                         11')
-	print(f'   11 {C}[{G}01{C}]{R} Eliminar Arquivos Inuteis{C}]{C} 11')
+	print(f'   11 {C}[{G}01{C}]{R} Consulta Número {C}]{C} 11')
 	
 	print(f'   11                                         11')
 	print(f'   \\--==--==--==--==--==--==--==--==--==--==--//')
