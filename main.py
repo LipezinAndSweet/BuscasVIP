@@ -35,7 +35,7 @@ while True:
 	print(f'              {C}{R}BY LIPEZIN {C}')
 	print(f'   //--==--==--==--==--==--==--==--==--==--==--\\')
 	print(f'   11                                         11')
-	print(f'   11 {C}[{G}01{C}]{R} apagar arquiv inúteis{C}]{C} 11')
+	print(f'   11 {C}[{G}01{C}]{R} CONSULTA NÚMERO{C}]{C} 11')
 	print(f'   11                                         11')
 	print(f'   \\--==--==--==--==--==--==--==--==--==--==--//')
 	choice = input(f'\n\n\n{R}   QUAL OPCAO VC DESEJA?>>>{C} ')
